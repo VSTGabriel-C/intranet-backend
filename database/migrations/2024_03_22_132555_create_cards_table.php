@@ -17,12 +17,12 @@ class CreateCardsTable extends Migration
             $table->id();
             $table->string('name');
             $table->string('position')->nullable();
-            $table->string('description')->nullable();
+            $table->string('cellphone')->nullable();
+            $table->string('card_id')->nullable()->unique();
+            $table->string('email')->nullable();
             $table->string('photo')->nullable();
             $table->unsignedBigInteger('fk_section');
-            $table->unsignedBigInteger('fk_parent');
             $table->foreign('fk_section')->references('id')->on('sections')->onDelete('cascade');
-            $table->foreign('fk_parent')->references('id')->on('cards');
             $table->timestamps();
         });
     }

@@ -21,7 +21,6 @@ class Section extends Model
 
     public function create_model($request)
     {
-        $request->validated($request->all());
 
         $section = Section::create([
             'name' => $request->name,

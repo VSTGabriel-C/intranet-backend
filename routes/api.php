@@ -26,15 +26,13 @@ Route::group(['middleware' => ['auth:sanctum']], function () {
     // Cards Routes
     Route::post('/cards/create', [CardController::class, 'create']);
     Route::put('/cards/update/{card_id}', [CardController::class, 'update']);
-    Route::get('/cards/show', [CardController::class, 'show']);
-    Route::get('/cards/show_cards/{card_id}', [CardController::class, 'show_card']);
+    Route::get('/cards/show', [CardController::class, 'show_card']);
     Route::get('/cards/delete_cards/{card_id}', [CardController::class, 'delete_card']);
 
     // Sections Routes
     Route::post('/sections/create', [SectionController::class, 'create']);
     Route::put('/sections/update/{section_id}', [SectionController::class, 'update']);
-    Route::get('/sections/show', [SectionController::class, 'show']);
-    Route::get('/sections/show_section/{section_id}', [SectionController::class, 'show_section']);
+    Route::get('/sections/show', [SectionController::class, 'show_section']);
     Route::get('/sections/delete_section/{section_id}', [SectionController::class, 'delete_section']);
 
 });

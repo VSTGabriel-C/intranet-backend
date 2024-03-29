@@ -26,7 +26,9 @@ class CreateCardRequest extends FormRequest
         return [
             'name' => ['required', 'string'],
             'position' => ['string'],
-            'description' => ['string'],
+            'card_id' => ['string', 'required'],
+            'cellphone' => ['string'],
+            'email' => ['string'],
             'photo' => ['file'],
             'fk_section' => ['integer'],
             'fk_parent' => ['integer'],

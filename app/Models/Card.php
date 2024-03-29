@@ -11,7 +11,7 @@ class Card extends Model
     use HasFactory, HttpResponses;
 
     protected $fillable = [
-        'name', 'position', 'description', 'photo','fk_parent', 'fk_section'
+        'name', 'position', 'email', 'cellphone', 'card_id', 'photo','fk_parent', 'fk_section'
     ];
 
     public function section()
@@ -21,7 +21,6 @@ class Card extends Model
 
     public function create_model($request)
     {
-        $request->validated($request->all());
 
         $photo = null;
 
@@ -33,7 +32,9 @@ class Card extends Model
         $card = Card::create([
             'name' => $request->name,
             'position' => $request->position,
-            'description' => $request->description,
+            'email' => $request->email,
+            'cellphone' => $request->cellphone,
+            'card_id' => $request->card_id,
             'fk_section' => $request->fk_section,
             'fk_parent' => $request->fk_parent,
             'photo' => $photo,
@@ -46,7 +47,7 @@ class Card extends Model
 
     public function show_model()
     {
-        $response = Card::all()->take(10);
+        $response = Card::all();
 
         return $this->succes([
             'cards' => $response

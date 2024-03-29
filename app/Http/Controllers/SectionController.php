@@ -8,8 +8,9 @@ use Illuminate\Http\Request;
 
 class SectionController extends Controller
 {
-    public function create(CreateSectionRequest $request)
+    public function create(Request $request)
     {
+
         $section = (new Section)->create_model($request);
 
         return $section;
@@ -22,9 +23,9 @@ class SectionController extends Controller
         return $equipment;
     }
 
-    public function show_section($id)
+    public function show_section()
     {
-        $section = (new Section)->show_section($id);
+        $section = (new Section)->show_model();
 
         return $section;
     }

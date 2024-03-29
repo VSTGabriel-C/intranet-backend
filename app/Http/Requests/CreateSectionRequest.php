@@ -25,7 +25,7 @@ class CreateSectionRequest extends FormRequest
     {
         return [
             'name' => ['required', 'string'],
-            'order' => ['required', 'string'],
+            'order' => ['required', 'integer'],
         ];
     }
 }
